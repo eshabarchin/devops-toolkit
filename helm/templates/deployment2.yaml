@@ -8,7 +8,7 @@ metadata:
   name: depl2
   labels:
     chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
-    app: {{ template "fullname" . }}
+    app: depl2
 spec:
   selector:
     matchLabels:
@@ -19,7 +19,7 @@ spec:
         app: depl2
     spec:
       containers:
-      - name: {{ .Chart.Name }}
+      - name: depl2
         image: nginx:latest
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
