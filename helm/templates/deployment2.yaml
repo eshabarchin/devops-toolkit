@@ -5,18 +5,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "fullname" . }}
+  name: depl2
   labels:
     chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
     app: {{ template "fullname" . }}
 spec:
   selector:
     matchLabels:
-      app: {{ template "fullname" . }}
+      app: depl2
   template:
     metadata:
       labels:
-        app: {{ template "fullname" . }}
+        app: depl2
     spec:
       containers:
       - name: {{ .Chart.Name }}
